@@ -7,8 +7,8 @@ const Schema = new mongoose.Schema({
         required: true
     },
 
-    foodDescription: {
-        type: String,
+    foodQuantity: {
+        type: Number,
         required: true
     },
 
@@ -16,9 +16,10 @@ const Schema = new mongoose.Schema({
         type: Number,
         required: true
     },
+    
 
-    foodQuantity: {
-        type: Number,
+    foodDescription: {
+        type: String,
         required: true
     },
     
