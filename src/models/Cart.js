@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const Schema = new mongoose.Schema({
-    menu: [{
+    foods: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Food'
     }],
@@ -9,11 +9,6 @@ const Schema = new mongoose.Schema({
     username: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
-    },
-
-    userPhone: {
-        type: Number,
-        required: true
     },
 
     address: {

@@ -1,8 +1,9 @@
 const{Router} = require('express')
 
 const UserController = require('../controllers/UserController')
-const SessionController = require('../controllers/SessionController')
+const SessionController = require('../controllers/Login')
 const FoodController = require('../controllers/FoodController')
+//const CartController = require('../controllers/CartController')
 
 const routes = Router()
 
@@ -13,22 +14,22 @@ routes.get('/', (req,res) => {
 routes.post('/users', UserController.createUser)
 routes.get('/users', UserController.getUsers)
 routes.get('/users/:user_id', UserController.getUserById)
+
 routes.post('/sessions', SessionController.createSession)
 
-routes.get('/users/:user_id')
+routes.post('/foods/:user_id', FoodController.createFood)
+routes.get('/:user_id/foods ', FoodController.getUserFoods)
+routes.patch('/foods/:user_id/:food_id',FoodController.updateFood)
+routes.delete('/foods/:user_id/:food_id', FoodController.deleteFood)
 
-routes.post('/menu/:user_id', FoodController)
-routes.get('/menu/:user_id', FoodController)
-routes.patch('/menu/:user_id/:food_id',FoodController )
-routes.delete('/menu/:user_id/:food_id', FoodController)
+routes.get('/foods', FoodController.getFoods)
+routes.get('/foods/:food_id', FoodController.getFoodById)
 
-routes.get('/menu')
-routes.get('/menu/:food_id')
+//routes.post('/carts/:user_id', CartController.createCart)
 
-routes.post('/cart/:user_id')
-routes.get('/cart/:user_id')
+//routes.get('/carts/:user_id', CartController.getUserCarts)
 
-routes.get('/cart:user_id/:cart_id')
+//routes.get('/carts:user_id/:cart_id', CartController.getCart)
 
 
 

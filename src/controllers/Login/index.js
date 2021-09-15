@@ -1,5 +1,5 @@
 const User = require ('../../models/User')
-
+//1. Login LoginSession(req,res){42 min}
 const SessionController = {
 
     async createSession(req,res){
